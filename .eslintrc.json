@@ -1,9 +1,11 @@
 {
     "extends": ["eslint:recommended", "plugin:node/recommended", "airbnb-base",
-        "plugin:jest/recommended"],
+        "plugin:jest/recommended",
+        "plugin:flowtype/recommended"],
     "plugins": [
         "import",
-        "jest"
+        "jest", 
+        "flowtype"
     ],
     "rules": {
         "comma-dangle": ["error", "never"],
