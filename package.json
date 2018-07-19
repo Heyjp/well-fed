@@ -9,12 +9,18 @@
     "pg": "^7.4.3"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-flow": "^6.23.0",
     "eslint": "^5.1.0",
-    "eslint-plugin-node": "^7.0.1"
+    "eslint-plugin-node": "^7.0.1",
+    "flow-bin": "^0.76.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "./node_modules/.bin/eslint . || exit 0"
+    "test": "jest",
+    "lint": "./node_modules/.bin/eslint . || exit 0",
+    "build": "babel src/ -d lib/",
+    "prepublish": "npm run build",
+    "flow": "flow"
   },
   "repository": {
     "type": "git",
