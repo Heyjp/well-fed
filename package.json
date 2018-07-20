@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-flow": "^6.23.0",
     "eslint": "^5.1.0",
     "eslint-plugin-node": "^7.0.1",
@@ -21,6 +22,11 @@
     "build": "babel src/ -d lib/",
     "prepublish": "npm run build",
     "flow": "flow"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/client/"
+    ]
   },
   "repository": {
     "type": "git",

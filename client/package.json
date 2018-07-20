@@ -1,18 +1,33 @@
 {
   "name": "client",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "react-native": "^0.56.0"
-  },
+  "version": "0.1.0",
+  "private": true,
   "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^5.1.0",
-    "jest": "^23.4.1"
+    "eslint-plugin-react-native": "^3.2.1",
+    "flow-bin": "^0.76.0",
+    "jest-expo": "~27.0.0",
+    "react-native-scripts": "1.14.0",
+    "react-test-renderer": "16.3.1"
+  },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "scripts": {
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "test": "jest",
+    "flow": "flow"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "dependencies": {
+    "expo": "^27.0.1",
+    "flow-typed": "^2.5.1",
+    "react": "16.3.1",
+    "react-native": "~0.55.2"
   }
 }
