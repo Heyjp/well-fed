@@ -1,0 +1,12 @@
+[ignore]
+.*/node_modules/.*
+.*/node_modules/lottie-react-native.*
+<PROJECT_ROOT>/flowLibs.js
+.....
+[include]
+
+[libs]
+./flowLibs.js
+.....
+[lints]
+[options]

@@ -24,7 +24,9 @@
     "flow": "flow"
   },
   "jest": {
-    "testPathIgnorePatterns" : ["/client/"]
+    "testPathIgnorePatterns": [
+      "/client/"
+    ]
   },
   "repository": {
     "type": "git",
