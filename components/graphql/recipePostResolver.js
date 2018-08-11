@@ -1,5 +1,9 @@
+const jsonwebtoken = require('jsonwebtoken');
 const Recipe = require('./source.js');
 const recipeFuncs = require('../recipe/index.js');
+const authFunc = require('../auth/index.js');
+
+
 
 var root = {
     getRecipe: function ({id}) {
@@ -20,8 +24,25 @@ var root = {
         
     },
     updateRecipe: function ({id, input}) {
-        fakeDatabase[id] = input;
         return new Recipe(id, input);
+    },
+    createUser: function ({input}) {
+        let {email, password} = input;
+        return authFunc.createUser({email, password})
+            .then(res => {
+                console.log(res, 'createUser res');
+                return res.email;
+            })
+    },
+    loginUser: (_, {email, password}) => {
+        console.log(email, password);
+
+        let exists = authFunc.authUser(email, password)
+            .then(res => {
+                console.log(res);
+            })
+
+        return jwt.sign({id: 'test id'}, 'hello world', {expresIn: '1h'})
     }
 }
 

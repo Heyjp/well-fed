@@ -1,6 +1,11 @@
 const { buildSchema } = require('graphql');
 
 var recipeSchema = `
+    input UserInput {
+        email: String
+        password: String
+    }
+
     input RecipeInput {
         name: String
         ingredients: [String]
@@ -19,6 +24,8 @@ var recipeSchema = `
     type Mutation {
         createRecipe(input: RecipeInput): Recipe
         updateRecipe(id: ID!, input: RecipeInput): Recipe
+        createUser(input: UserInput): String
+        loginUser(input: UserInput): String
     }
 `;
 
