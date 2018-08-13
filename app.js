@@ -16,13 +16,6 @@ const authMiddleware = jwt({
     secret: 'hello world'
 });
 
-var fakeDatabase = {
-    "1": {
-        name: "Pizza",
-        ingredients: ["Tomato", "Cheese"]
-    }
-};
-
 app.use('/graphql', graphqlHTTP((req, res, params) => ({
     schema,
     rootValue: resolver,

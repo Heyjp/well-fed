@@ -30,19 +30,18 @@ var root = {
         let {email, password} = input;
         return authFunc.createUser({email, password})
             .then(res => {
-                console.log(res, 'createUser res');
                 return res.email;
             })
     },
-    loginUser: (_, {email, password}) => {
-        console.log(email, password);
+    loginUser: ({input}) => {
+        let {email, password} = input;
 
-        let exists = authFunc.authUser(email, password)
+        return authFunc.authUser(email, password)
             .then(res => {
-                console.log(res);
+                return res;
             })
 
-        return jwt.sign({id: 'test id'}, 'hello world', {expresIn: '1h'})
+        // return jwt.sign({id: 'test id'}, 'hello world', {expresIn: '1h'})
     }
 }
 
