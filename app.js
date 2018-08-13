@@ -13,7 +13,7 @@ const schema = require('./components/graphql/recipePostSchema.js');
 const resolver = require('./components/graphql/recipePostResolver.js');
 
 const authMiddleware = jwt({
-    secret: 'hello world'
+    secret: process.env.CLIENT_SECRET
 });
 
 app.use('/graphql', graphqlHTTP((req, res, params) => ({

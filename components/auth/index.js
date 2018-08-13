@@ -15,9 +15,7 @@ async function authUser (email, password) {
             // If email does not exist exit
             if (res.rows.length === 0 ) return false;
             // if email exists but password !== password
-            let verify = bcrypt.compare(password, res.rows[0].password, function (err, res) {
-                return res;
-            });
+            let verify = bcrypt.compareSync(password, res.rows[0].password);
             if (!verify) return false;
             // if both email & password match return jwt 
             let token = jwt.sign({
