@@ -1,5 +1,3 @@
-const { buildSchema } = require('graphql');
-
 var recipeSchema = `
     input UserInput {
         email: String
