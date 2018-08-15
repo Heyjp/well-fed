@@ -4,8 +4,6 @@ const recipeFuncs = require('./index.js');
 const resolvers = {
     Query: {
         getRecipe: function (_, {id}) {
-            // if (!fakeDatabase[id]) return false;
-            // return new Recipe(id, fakeDatabase[id]);
             return recipeFuncs.getRecipeByIndex(id)
                 .then(res => {
                     return new Recipe(res);
@@ -15,8 +13,6 @@ const resolvers = {
 
     Mutation: {
         createRecipe: function (_, {input}) {
-            // var id = Math.floor(Math.random() * Math.floor( 50))
-            // fakeDatabase[id] = input;
             return recipeFuncs.createRecipe(input)
                 .then(res => {
                     return new Recipe(res);
