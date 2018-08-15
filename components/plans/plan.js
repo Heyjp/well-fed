@@ -36,3 +36,5 @@ class MealPlan {
         this.instructions = instructions;
     }
 }
+
+module.exports = MealPlan;
