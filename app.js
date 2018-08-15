@@ -9,8 +9,8 @@ const db = require('./components/db/index.js');
 
 db.client.connect();
 
-const typeDefs = require('./components/graphql/index.js');
-const resolvers = require('./components/graphql/recipePostResolver.js');
+const typeDefs = require('./components/graphql/schemas.js');
+const resolvers = require('./components/graphql/resolvers.js');
 
 const authMiddleware = jwt({
     secret: process.env.CLIENT_SECRET

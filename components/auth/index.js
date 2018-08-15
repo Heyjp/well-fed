@@ -47,7 +47,3 @@ async function createUser ({email, password}) {
 }
 
 module.exports = {authUser, createUser};
-
-
-// hash passwords!
-// SIGN TOKENS

@@ -1,12 +1,12 @@
-const Recipe = require('../recipe/recipe.js');
-const User = require('../user/user.js');
+const RecipeSchema = require('../recipe/recipeSchema.js');
+const UserSchema = require('../user/userSchema.js');
 
 const types = [];
 const queries = [];
 const inputs = [];
 const mutations = [];
 
-const Schemas = [Recipe, User];
+const Schemas = [RecipeSchema, UserSchema];
 
 Schemas.forEach(e => {
     types.push(e.types);
