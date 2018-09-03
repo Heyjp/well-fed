@@ -14,12 +14,13 @@ const types = `
     type MealPlan {
         id: ID!
         name: String
-        categories: [ 
-                        { 
-                            Category: String
-                            Recipes: [ {id: ID! name: String, ingredients: [String]} ]
-                        } 
-                    ]
+        categories: 
+            [ 
+                { 
+                    Category: String
+                    Recipes: [ {id: ID! name: String, ingredients: [String]} ]
+                } 
+            ]
         Information: {
             calories: Int
             meals: Int
