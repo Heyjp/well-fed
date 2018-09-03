@@ -24,6 +24,6 @@ const resolvers = {
 
 module.exports = resolvers;
 
-function returnRecipe (res) {
-    return new Recipe(res);
+function returnRecipe (recipe) {
+    return new Recipe(recipe);
 }

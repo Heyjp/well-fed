@@ -3,7 +3,7 @@ class Ingredient {
         this.name = name;
         this.quantity = quantity;
         this.measurement = measurement;
-        this.nutrition = nutrition.
+        this.nutrition = nutrition;
     }
 }
 
