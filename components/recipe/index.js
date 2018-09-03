@@ -1,6 +1,6 @@
 const client = require('../db/index.js');
 
-function getRecipeByIndex (id) {
+function getRecipeById (id) {
     var search = 'SELECT * FROM recipes WHERE id = $1'
     return client.client.query(search, [id])
         .then(res => {
@@ -22,4 +22,4 @@ async function createRecipe (input) {
 
 
 
-module.exports = { getRecipeByIndex, createRecipe };
+module.exports = { getRecipeById, createRecipe };
