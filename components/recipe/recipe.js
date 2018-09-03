@@ -29,6 +29,7 @@ module.exports = Recipe;
         },
         original_url: // does the recipe come from a site
         forked: "recipe_id" // copy fo recipe for editing
+        image: // file or url? - file uploaded to amazon from phone
     }
 
     // Rating system, stars, thumbs up/down, or words? Tasty, Filling, Easy, Quick, Simple, Complex

@@ -4,25 +4,26 @@ const recipeFuncs = require('./index.js');
 const resolvers = {
     Query: {
         getRecipe: function (_, {id}) {
-            return recipeFuncs.getRecipeByIndex(id)
-                .then(res => {
-                    return new Recipe(res);
-                });
+            return recipeFuncs.getRecipeById(id)
+                .then(returnRecipe)
         },
     },
 
     Mutation: {
         createRecipe: function (_, {input}) {
             return recipeFuncs.createRecipe(input)
-                .then(res => {
-                    return new Recipe(res);
-                })
+                .then(returnRecipe)
             
         },
         updateRecipe: function (_, {id, input}) {
-            return new Recipe(id, input);
+            return recipeFuncs.updateRecipe(id, input)
+                .then(returnRecipe)
         },
     },
 };
 
 module.exports = resolvers;
+
+function returnRecipe (res) {
+    return new Recipe(res);
+}

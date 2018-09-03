@@ -20,6 +20,17 @@ async function createRecipe (input) {
         })
 }
 
+function updateRecipe (recipeId, recipe) {
+    let query = "UPDATE recipes SET name = $1, ingredients = $2 WHERE id = $3 RETURNING *"
+    let {name, ingredients} = recipe;
+    return client.client.query(query, [name, ingredients, recipeId])
+        .then(res => {
+            return res.rows[0];
+        })
+        .catch(err => {
+            console.log(err, 'this is err');
+        })
+}
 
 
-module.exports = { getRecipeById, createRecipe };
+module.exports = { getRecipeById, createRecipe, updateRecipe };
