@@ -2,7 +2,7 @@ const MealPlan = require('./plan.js');
 
 const resolvers = {
     Query: {
-        getRecipe: function (_, {id}) {
+        getMealPlan: function (_, {id}) {
             return mealPlanFuncs.getMealPlanById(id)
                 .then(res => {
                     return new MealPlan(res);
@@ -18,7 +18,9 @@ const resolvers = {
         },
         updateMealPlan: function (_, {id, plan}) {
             return new MealPlan(id, plan)
-        }
+        },
     },
 
 }
+
+module.exports = resolvers;

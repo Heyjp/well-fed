@@ -1,5 +1,6 @@
 const RecipeSchema = require('../recipe/recipeSchema.js');
 const UserSchema = require('../user/userSchema.js');
+const PlanSchema = require('../plans/planSchema.js');
 
 const types = [];
 const queries = [];
