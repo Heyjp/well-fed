@@ -3,6 +3,11 @@ const inputs = `
         name: String
         categories: []
     }
+
+    input MealPlanInput {
+        name: String
+        categories: []
+    }
 `
 
 const mutations = `
