@@ -20,6 +20,7 @@ const types = `
 
 const queries = `
         getRecipe(id: ID!): Recipe
+        getRecipes(searchTerm: String): [Recipe]
 `
 
 

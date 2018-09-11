@@ -7,6 +7,10 @@ const resolvers = {
             return recipeFuncs.getRecipeById(id)
                 .then(returnRecipe)
         },
+        getRecipes: function (_, {searchTerm}) {
+            return recipeFuncs.getRecipes(searchTerm)
+                .then(res => res);
+        }
     },
 
     Mutation: {

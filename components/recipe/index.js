@@ -8,10 +8,25 @@ function getRecipeById (id) {
         });
 }
 
+function getRecipes (field) {
+    let search;
+    if (field.length === 0) {
+        search = "SELECT * FROM recipes"
+        return client.client.query(search)
+            .then(res => res.rows);
+    } 
+
+    search = "SELECT * FROM recipes WHERE name LIKE $1"
+    return client.client.query(search, ["%" + field + "%"])
+            .then(res => res.rows);
+} 
+
+
+
 async function createRecipe (input) {
     let query = "INSERT INTO recipes(name, ingredients) VALUES ($1, $2) RETURNING *";
     let { name, ingredients} = input;
-    return client.client.query(query, [name, ingredients])
+    return client.client.query(query, ['%' + name + '%', ingredients])
         .then(res => {
             return res.rows[0];
         })
@@ -33,4 +48,4 @@ function updateRecipe (recipeId, recipe) {
 }
 
 
-module.exports = { getRecipeById, createRecipe, updateRecipe };
+module.exports = { getRecipeById, getRecipes, createRecipe, updateRecipe };
