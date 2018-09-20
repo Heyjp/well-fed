@@ -25,7 +25,7 @@
 */
 
 class MealPlan {
-    constructor({id, name, categories, information, created_by, edited, original_plan, instructions}) {
+    constructor({id, name, categories, information, created_by, edited, original_plan, instructions, ingredients}) {
         this.id = id;
         this.name = name;
         this.categories = categories;
@@ -34,6 +34,7 @@ class MealPlan {
         this.last_edited = edited;
         this.original = original_plan;
         this.instructions = instructions;
+        this.ingredients = ingredients;
     }
 }
 

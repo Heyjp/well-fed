@@ -1,13 +1,13 @@
 const RecipeSchema = require('../recipe/recipeSchema.js');
 const UserSchema = require('../user/userSchema.js');
-// const PlanSchema = require('../plans/planSchema.js');
+const PlanSchema = require('../plans/planSchema.js');
 
 const types = [];
 const queries = [];
 const inputs = [];
 const mutations = [];
 
-const Schemas = [RecipeSchema, UserSchema];
+const Schemas = [RecipeSchema, UserSchema, PlanSchema];
 
 Schemas.forEach(e => {
     types.push(e.types);

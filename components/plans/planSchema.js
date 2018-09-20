@@ -1,12 +1,8 @@
 const inputs = `
-    input MealInput {
+    type MealPlanInput {
+        id: ID!
         name: String
-        categories: []
-    }
-
-    input MealPlanInput {
-        name: String
-        categories: []
+        ingredients: [String]
     }
 `
 
@@ -16,25 +12,13 @@ const mutations = `
 `
 
 const types = `
-    type MealPlan {
-        id: ID!
-        name: String
-        categories: 
-            [ 
-                { 
-                    Category: String
-                    Recipes: [ {id: ID! name: String, ingredients: [String]} ]
-                } 
-            ]
-        Information: {
-            calories: Int
-            meals: Int
-            cost: String
+        type MealPlan {
+            id: ID!
+            name: String
+            created_by: String
+            copied_from: ID
+            description: [String]
         }
-        created_by: String
-        copied_from: ID
-        description: [String]
-    }
 `
 
 const queries = `

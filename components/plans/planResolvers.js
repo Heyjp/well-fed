@@ -1,4 +1,5 @@
 const MealPlan = require('./plan.js');
+const mealPlanFuncs = require('./index.js');
 
 const resolvers = {
     Query: {
@@ -8,7 +9,7 @@ const resolvers = {
                     return new MealPlan(res);
                 })
         },
-    }, 
+    },
     Mutation: {
         createMealPlan: function (_, {plan}) {
             return mealPlanFuncs.createMealPlan(plan)
@@ -20,7 +21,6 @@ const resolvers = {
             return new MealPlan(id, plan)
         },
     },
-
 }
 
 module.exports = resolvers;

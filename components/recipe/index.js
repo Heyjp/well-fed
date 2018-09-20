@@ -1,7 +1,7 @@
 const client = require('../db/index.js');
 
 function getRecipeById (id) {
-    var search = 'SELECT * FROM recipes WHERE id = $1'
+    let search = 'SELECT * FROM recipes WHERE id = $1'
     return client.client.query(search, [id])
         .then(res => {
             return res.rows[0];
